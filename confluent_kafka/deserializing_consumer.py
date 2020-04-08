@@ -93,7 +93,7 @@ class DeserializingConsumer(_ConsumerImpl):
     Raises:
         ValueError: if configuration validation fails
 
-    """
+    """  # noqa: E501
 
     def __init__(self, conf):
         conf_copy = conf.copy()

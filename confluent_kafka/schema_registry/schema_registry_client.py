@@ -312,7 +312,7 @@ class SchemaRegistryClient(object):
             int: Schema id
 
         Raises:
-            SchemaRegistryError: if Schema violates this subject's 
+            SchemaRegistryError: if Schema violates this subject's
                 Compatibility policy or is otherwise invalid.
 
         See Also:

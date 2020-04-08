@@ -346,7 +346,7 @@ class StringSerializer(Serializer):
 
     See Also:
         `Supported encodings <https://docs.python.org/3/library/codecs.html#standard-encodings>`_
-    
+
         `StringSerializer Javadoc <https://docs.confluent.io/current/clients/javadocs/org/apache/kafka/common/serialization/StringSerializer.html>`_
 
     """  # noqa: E501
@@ -392,7 +392,7 @@ class StringDeserializer(Deserializer):
 
     See Also:
         `Supported encodings <https://docs.python.org/3/library/codecs.html#standard-encodings>`_
-    
+
         `StringDeserializer Javadoc <https://docs.confluent.io/current/clients/javadocs/org/apache/kafka/common/serialization/StringDeserializer.html>`_
 
     """  # noqa: E501

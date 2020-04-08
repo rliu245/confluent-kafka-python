@@ -227,7 +227,7 @@ class JSONDeserializer(Deserializer):
         from_dict (callable, optional): Callable(dict, SerializationContext) -> object.
             Converts dict to an instance of some object.
 
-    """
+    """  # noqa: E501
     __slots__ = ['_parsed_schema', '_from_dict']
 
     def __init__(self, schema_str, from_dict=None):

@@ -55,7 +55,7 @@ class SerializingProducer(_ProducerImpl):
         All configured callbacks are served from the application queue upon
         calling :py:func:`SerializingProducer.poll` or :py:func:`SerializingProducer.flush`
 
-    SerializingProducer configuration properties(* indicates required field)
+    Notable SerializingProducer configuration properties(* indicates required field)
 
     +--------------------+-----------------+-----------------------------------------------------+
     | Property Name      | Type            | Description                                         |
@@ -99,7 +99,7 @@ class SerializingProducer(_ProducerImpl):
     Args:
         conf (producer): SerializingProducer configuration.
 
-    """
+    """  # noqa E501
     def __init__(self, conf):
         conf_copy = conf.copy()
 
