@@ -43,7 +43,7 @@ class DeserializingConsumer(_ConsumerImpl):
         All configured callbacks are served from the application queue upon
         calling :py:func:`DeserializingConsumer.poll`
 
-    DeserializingConsumer configuration properties(* indicates required field)
+    Notable DeserializingConsumer configuration properties(* indicates required field)
 
     +--------------------+-----------------+-----------------------------------------------------+
     | Property Name      | Type            | Description                                         |
@@ -83,17 +83,15 @@ class DeserializingConsumer(_ConsumerImpl):
     |                    |                 | Callback for throttled request reporting.           |
     +--------------------+-----------------+-----------------------------------------------------+
 
-    .. _See Client CONFIGURATION.md for a complete list of configuration properties:
-        https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
+    See Also:
+        - `CONFIGURATION.md <https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md>`_ for additonal configuration property details.
+        - `STATISTICS.md <https://github.com/edenhill/librdkafka/blob/master/STATISTICS.md>`_ for detailed information about the statistics handled by stats_cb
 
     Args:
         conf (dict): DeserializingConsumer configuration.
 
     Raises:
         ValueError: if configuration validation fails
-
-    .. _Statistics:
-        https://github.com/edenhill/librdkafka/blob/master/STATISTICS.md
 
     """
 
@@ -154,7 +152,7 @@ class DeserializingConsumer(_ConsumerImpl):
 
     def consume(self, num_messages=1, timeout=-1):
         """
-        :py:func:`Consumer.consume` not implemented,
+        :py:func:`Consumer.consume` not implemented, use
         :py:func:`DeserializingConsumer.poll` instead
         """
         raise NotImplementedError

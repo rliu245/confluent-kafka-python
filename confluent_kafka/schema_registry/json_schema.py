@@ -51,13 +51,14 @@ class JSONSerializer(Serializer):
     format for JSON.
 
     JsonSerializer configuration properties:
+
     +-----------------------+----------+--------------------------------------------------+
     | Property Name         | Type     | Description                                      |
     +=======================+==========+==================================================+
     |                       |          | Registers schemas automatically if not           |
     | auto.register.schemas | bool     | previously associated with a particular subject. |
     |                       |          | Defaults to True.                                |
-    +-----------------------|----------+--------------------------------------------------+
+    +-----------------------+----------+--------------------------------------------------+
     |                       |          | Callable(SerializationContext, str) -> str       |
     |                       |          |                                                  |
     | subject.name.strategy | callable | Instructs the JsonSerializer on how to construct |
@@ -75,6 +76,7 @@ class JSONSerializer(Serializer):
     `subject.name.strategy`.
 
     Supported subject name strategies:
+
     +--------------------------------------+------------------------------+
     | Subject Name Strategy                | Output Format                |
     +======================================+==============================+
@@ -85,7 +87,7 @@ class JSONSerializer(Serializer):
     | record_subject_name_strategy         | {record name}                |
     +--------------------------------------+------------------------------+
 
-    See ``Subject name strategy`` for additional details.
+    See `Subject name strategy <https://docs.confluent.io/current/schema-registry/serializer-formatter.html#subject-name-strategy>`_ for additional details.
 
     Note:
         The ``title`` annotation, referred to as a record name
@@ -96,7 +98,7 @@ class JSONSerializer(Serializer):
         and schema registration.
 
     Args:
-        schema_str (str): JSON Schema definition.
+        schema_str (str): `JSON Schema definition. <https://json-schema.org/understanding-json-schema/reference/generic.html>`_
 
         schema_registry_client (SchemaRegistryClient): Schema Registry
             client instance.
@@ -105,12 +107,6 @@ class JSONSerializer(Serializer):
             Converts object to a dict.
 
         conf (dict): JsonSerializer configuration.
-
-    .. _Subject name strategy:
-        https://docs.confluent.io/current/schema-registry/serializer-formatter.html#subject-name-strategy
-
-    .. _Schema definition:
-        https://json-schema.org/understanding-json-schema/reference/generic.html
 
     """  # noqa: E501
     __slots__ = ['_hash', '_auto_register', '_known_subjects', '_parsed_schema',
@@ -226,13 +222,10 @@ class JSONDeserializer(Deserializer):
     JSON format to an object.
 
     Args:
-        schema_str (str): JSON schema definition use for validating records.
+        schema_str (str): `JSON schema definition <https://json-schema.org/understanding-json-schema/reference/generic.html>`_ use for validating records.
 
         from_dict (callable, optional): Callable(dict, SerializationContext) -> object.
             Converts dict to an instance of some object.
-
-    .. _Schema definition:
-        https://json-schema.org/understanding-json-schema/reference/generic.html
 
     """
     __slots__ = ['_parsed_schema', '_from_dict']
@@ -261,7 +254,7 @@ class JSONDeserializer(Deserializer):
 
         Raises:
             SerializerError: If ``value`` cannot be validated by the schema
-            configured with this JsonDeserializer instance.
+                configured with this JsonDeserializer instance.
 
         """
         if value is None:

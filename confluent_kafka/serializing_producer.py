@@ -92,14 +92,12 @@ class SerializingProducer(_ProducerImpl):
     |                    |                 | Callback for throttled request reporting.           |
     +--------------------+-----------------+-----------------------------------------------------+
 
-    .. _See Client CONFIGURATION.md for a complete list of configuration properties:
-        https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md
+    See Also:
+        - `CONFIGURATION.md <https://github.com/edenhill/librdkafka/blob/master/CONFIGURATION.md>`_ for additonal configuration property details.
+        - `STATISTICS.md <https://github.com/edenhill/librdkafka/blob/master/STATISTICS.md>`_ for detailed information about the statistics handled by stats_cb
 
     Args:
         conf (producer): SerializingProducer configuration.
-
-    .. _Statistics:
-        https://github.com/edenhill/librdkafka/blob/master/STATISTICS.md
 
     """
     def __init__(self, conf):

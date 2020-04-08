@@ -138,13 +138,14 @@ class ProtobufSerializer(object):
     binary format for Protobuf.
 
     ProtobufSerializer configuration properties:
+
     +---------------------------------+----------+------------------------------------------------------+
     | Property Name                   | Type     | Description                                          |
     +=================================+==========+======================================================+
     |                                 |          | Registers schemas automatically if not               |
     | auto.register.schemas           | bool     | previously associated with a particular subject.     |
     |                                 |          | Defaults to True.                                    |
-    +---------------------------------|----------+------------------------------------------------------+
+    +---------------------------------+----------+------------------------------------------------------+
     |                                 |          | Callable(SerializationContext, str) -> str           |
     |                                 |          |                                                      |
     | subject.name.strategy           | callable | Instructs the ProtobufSerializer on how to construct |
@@ -167,7 +168,8 @@ class ProtobufSerializer(object):
     Alternative naming strategies may be configured with the property
     `subject.name.strategy`.
 
-    Supported subject name strategies:
+    Supported subject name strategies
+
     +--------------------------------------+------------------------------+
     | Subject Name Strategy                | Output Format                |
     +======================================+==============================+
@@ -178,7 +180,7 @@ class ProtobufSerializer(object):
     | record_subject_name_strategy         | {record name}                |
     +--------------------------------------+------------------------------+
 
-    See ``Subject name strategy`` for additional details.
+    See `Subject name strategy <https://docs.confluent.io/current/schema-registry/serializer-formatter.html#subject-name-strategy>`_ for additional details.
 
     Args:
         msg_type (GeneratedProtocolMessageType): Protobuf Message type.
@@ -188,11 +190,8 @@ class ProtobufSerializer(object):
 
         conf (dict): ProtobufSerializer configuration.
 
-    .. _Subject name strategy:
-        https://docs.confluent.io/current/schema-registry/serializer-formatter.html#subject-name-strategy
-
-    .. _Protobuf API reference:
-        https://googleapis.dev/python/protobuf/latest/google/protobuf.html
+    See Also:
+        `Protobuf API reference <https://googleapis.dev/python/protobuf/latest/google/protobuf.html>`_
 
     """  # noqa: E501
     __slots__ = ['_auto_register', '_registry', '_known_subjects',
@@ -343,8 +342,8 @@ class ProtobufDeserializer(object):
     Args:
         message_type (GeneratedProtocolMessageType): Protobuf Message type.
 
-    .. _Protobuf API reference:
-        https://googleapis.dev/python/protobuf/latest/google/protobuf.html
+    See Also:
+    `Protobuf API reference <https://googleapis.dev/python/protobuf/latest/google/protobuf.html>`_
 
     """
     __slots__ = ['_msg_class', '_msg_index']
